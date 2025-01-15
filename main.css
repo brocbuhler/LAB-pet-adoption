@@ -1,3 +1,4 @@
-body {
-  background-color: green;
+#animals {
+  display: flex;
+  flex-flow: row wrap;
 }
