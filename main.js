@@ -240,3 +240,34 @@ const pets = [
       imageUrl: "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119"
     }
   ];
+function viewData(x) {
+  for (let i = 0; i < x.length; i++) {
+    console.log(x[i]);
+  }
+}
+// {/* <div class="card" style="width: 18rem;">
+// <img src="..." class="card-img-top" alt="...">
+// <div class="card-body">
+//   <h5 class="card-title">Card title</h5>
+//   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+//   <a href="#" class="btn btn-primary">Go somewhere</a>
+// </div>
+// </div> */}
+// need to implement the above code into my loop function
+// need to link div to my java
+let renderHTMLLocation = document.querySelector("#animals");
+function renderPets() {
+  let content = ''
+ for (let i = 0; i < pets.length; i++) {
+  content += `<div class="card" style="width: 18rem;">
+  <img src="${pets[i].imageUrl}" class="card-img-top" alt="someones pet">
+  <div class="card-body">
+    <h5 class="card-title">${pets[i].name}</h5>
+    <p class="card-text">color: ${pets[i].color} Special Skill: ${pets[i].specialSkill}</p>
+    <a href="#" class="btn btn-primary">${pets[i].type}</a>
+  </div>
+</div>`
+ }
+ renderHTMLLocation.innerHTML = content
+}
+renderPets()
