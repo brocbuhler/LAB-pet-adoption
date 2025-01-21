@@ -245,17 +245,15 @@ function viewData(x) {
     console.log(x[i]);
   }
 }
-// {/* <div class="card" style="width: 18rem;">
-// <img src="..." class="card-img-top" alt="...">
-// <div class="card-body">
-//   <h5 class="card-title">Card title</h5>
-//   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//   <a href="#" class="btn btn-primary">Go somewhere</a>
-// </div>
-// </div> */}
-// need to implement the above code into my loop function
-// need to link div to my java
+let viewBtn = document.querySelector("#all-el");
+let dogsBtn = document.querySelector("#dogs-el");
+let catsBtn = document.querySelector("#cats-el");
+let dinosBtn = document.querySelector("#dinos-el");
 let renderHTMLLocation = document.querySelector("#animals");
+viewBtn.addEventListener("click", renderPets);
+dogsBtn.addEventListener("click", renderDogs);
+catsBtn.addEventListener("click", renderCats);
+dinosBtn.addEventListener("click", renderDinos);
 function renderPets() {
   let content = ''
  for (let i = 0; i < pets.length; i++) {
@@ -270,4 +268,51 @@ function renderPets() {
  }
  renderHTMLLocation.innerHTML = content
 }
-renderPets()
+function renderCats() {
+  let content = ''
+  for (let i = 0; i < pets.length; i++) {
+    if (pets[i].type === "cat") {
+   content += `<div class="card" style="width: 18rem;">
+   <img src="${pets[i].imageUrl}" class="card-img-top" alt="someones pet">
+   <div class="card-body">
+     <h5 class="card-title">${pets[i].name}</h5>
+     <p class="card-text">color: ${pets[i].color} Special Skill: ${pets[i].specialSkill}</p>
+     <a href="#" class="btn btn-primary">${pets[i]}</a>
+   </div>
+ </div>`
+  }
+}
+  renderHTMLLocation.innerHTML = content
+};
+function renderDogs() {
+  let content = ''
+  for (let i = 0; i < pets.length; i++) {
+    if (pets[i].type === "dog") {
+   content += `<div class="card" style="width: 18rem;">
+   <img src="${pets[i].imageUrl}" class="card-img-top" alt="someones pet">
+   <div class="card-body">
+     <h5 class="card-title">${pets[i].name}</h5>
+     <p class="card-text">color: ${pets[i].color} Special Skill: ${pets[i].specialSkill}</p>
+     <a href="#" class="btn btn-primary">${pets[i].type}</a>
+   </div>
+ </div>`
+    }
+  }
+  renderHTMLLocation.innerHTML = content
+};
+function renderDinos() {
+  let content = ''
+  for (let i = 0; i < pets.length; i++) {
+    if (pets[i].type === "dino") {
+   content += `<div class="card" style="width: 18rem;">
+   <img src="${pets[i].imageUrl}" class="card-img-top" alt="someones pet">
+   <div class="card-body">
+     <h5 class="card-title">${pets[i].name}</h5>
+     <p class="card-text">color: ${pets[i].color} Special Skill: ${pets[i].specialSkill}</p>
+     <a href="#" class="btn btn-primary">${pets[i].type}</a>
+   </div>
+ </div>`
+    }
+  }
+  renderHTMLLocation.innerHTML = content
+};

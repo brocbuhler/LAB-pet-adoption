@@ -1,4 +1,20 @@
 #animals {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
+}
+.btn-el {
+  display: flex;
+  justify-content: space-evenly;
+}
+.btns {
+  width: 200px;
+  background-color: black;
+  color: white;
+  border: 5px solid white;
+  font-weight: bolder;
+  border-radius: 10px;
+}
+.btns:hover {
+  background-color: blue;
 }
