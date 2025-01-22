@@ -1,4 +1,4 @@
-const pets = [
+let pets = [
     {
       id: 1,
       name: "Dusty",
@@ -245,15 +245,32 @@ function viewData(x) {
     console.log(x[i]);
   }
 }
+let submitInput = document.querySelector("#submit");
 let viewBtn = document.querySelector("#all-el");
 let dogsBtn = document.querySelector("#dogs-el");
 let catsBtn = document.querySelector("#cats-el");
 let dinosBtn = document.querySelector("#dinos-el");
 let renderHTMLLocation = document.querySelector("#animals");
+let form = document.querySelector('form')
 viewBtn.addEventListener("click", renderPets);
 dogsBtn.addEventListener("click", renderDogs);
 catsBtn.addEventListener("click", renderCats);
 dinosBtn.addEventListener("click", renderDinos);
+submitInput.addEventListener("click", renderNewPets);
+function renderNewPets() {
+  e.preventDefault();
+  let newPet = {
+    id: pets.length + 1,
+    name: document.querySelector("#name").value,
+    color: document.querySelector("#color").value,
+    specialSkill: document.querySelector("#specialSkill").value,
+    type: document.querySelector("#type").value,
+    imageUrl: document.querySelector("#image").value
+}
+pets.push(newPet);
+renderPets();
+form.reset();
+}
 function renderPets() {
   let content = ''
  for (let i = 0; i < pets.length; i++) {
