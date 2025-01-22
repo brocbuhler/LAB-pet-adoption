@@ -18,3 +18,10 @@
 .btns:hover {
   background-color: blue;
 }
+.card-img-top {
+  height: 200px;
+  border-radius: 25px;
+}
+.a {
+  background-color: black;
+}
