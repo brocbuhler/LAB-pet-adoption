@@ -53,3 +53,15 @@
   background-image: linear-gradient(purple, hotpink);
   text-shadow: 0px 0px 3px black;
 }
+.delete {
+  width: 35px;
+  height: 35px;
+  font-weight: 900;
+  background-color: red;
+  border: 1px solid black;
+  text-align: center;
+  border-radius: 5px;
+}
+.delete:hover {
+background-image: linear-gradient(hotpink, red);
+}

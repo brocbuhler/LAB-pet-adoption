@@ -253,6 +253,7 @@ let catsBtn = document.querySelector("#cats-el");
 let dinosBtn = document.querySelector("#dinos-el");
 let renderHTMLLocation = document.querySelector("#animals");
 let form = document.querySelector('form')
+let deleteBtn = document.querySelector(".delete") //need html button with css styling
 //
 
 // Event listeners
@@ -261,6 +262,7 @@ dogsBtn.addEventListener("click", renderDogs);
 catsBtn.addEventListener("click", renderCats);
 dinosBtn.addEventListener("click", renderDinos);
 form.addEventListener("submit", renderNewPets);
+deleteBtn.addEventListener("click", deletePet);
 // 
 
 // Functions
@@ -289,6 +291,7 @@ function renderPets() {
     <p class="card-text">color: ${pets[i].color}, 
     Special Skill: ${pets[i].specialSkill}</p>
     <a href="#" class="btn btn-primary">${pets[i].type}</a>
+    <button class="delete">X</button>
   </div>
 </div>`
  }
@@ -306,6 +309,7 @@ function renderCats() {
      <p class="card-text">color: ${pets[i].color}, 
      Special Skill: ${pets[i].specialSkill}</p>
      <a href="#" class="btn btn-primary">${pets[i].type}</a>
+     <button class="delete">X</button>
    </div>
  </div>`
   }
@@ -324,6 +328,7 @@ function renderDogs() {
      <p class="card-text">color: ${pets[i].color}, 
      Special Skill: ${pets[i].specialSkill}</p>
      <a href="#" class="btn btn-primary">${pets[i].type}</a>
+     <button class="delete">X</button>
    </div>
  </div>`
     }
@@ -342,6 +347,7 @@ function renderDinos() {
      <p class="card-text">color: ${pets[i].color}, 
      Special Skill: ${pets[i].specialSkill}</p>
      <a href="#" class="btn btn-primary">${pets[i].type}</a>
+     <button class="delete">X</button>
    </div>
  </div>`
     }
@@ -349,3 +355,9 @@ function renderDinos() {
   renderHTMLLocation.innerHTML = content
 };
 //
+
+//need a new function that will delete and then update the dom with the deleted info
+function deletePet() {
+  //funky splice stuff and review of js event listners 
+  console.log("button works!!!")
+}
