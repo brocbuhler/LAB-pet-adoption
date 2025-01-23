@@ -245,20 +245,27 @@ function viewData(x) {
     console.log(x[i]);
   }
 }
-let submitInput = document.querySelector("#submit");
+
+// html variable connectors
 let viewBtn = document.querySelector("#all-el");
 let dogsBtn = document.querySelector("#dogs-el");
 let catsBtn = document.querySelector("#cats-el");
 let dinosBtn = document.querySelector("#dinos-el");
 let renderHTMLLocation = document.querySelector("#animals");
 let form = document.querySelector('form')
+//
+
+// Event listeners
 viewBtn.addEventListener("click", renderPets);
 dogsBtn.addEventListener("click", renderDogs);
 catsBtn.addEventListener("click", renderCats);
 dinosBtn.addEventListener("click", renderDinos);
-submitInput.addEventListener("click", renderNewPets);
-function renderNewPets() {
-  e.preventDefault();
+form.addEventListener("submit", renderNewPets);
+// 
+
+// Functions
+function renderNewPets(e) {
+  e.preventDefault()
   let newPet = {
     id: pets.length + 1,
     name: document.querySelector("#name").value,
@@ -270,7 +277,8 @@ function renderNewPets() {
 pets.push(newPet);
 renderPets();
 form.reset();
-}
+};
+
 function renderPets() {
   let content = ''
  for (let i = 0; i < pets.length; i++) {
@@ -285,7 +293,8 @@ function renderPets() {
 </div>`
  }
  renderHTMLLocation.innerHTML = content
-}
+};
+
 function renderCats() {
   let content = ''
   for (let i = 0; i < pets.length; i++) {
@@ -303,6 +312,7 @@ function renderCats() {
 }
   renderHTMLLocation.innerHTML = content
 };
+
 function renderDogs() {
   let content = ''
   for (let i = 0; i < pets.length; i++) {
@@ -320,6 +330,7 @@ function renderDogs() {
   }
   renderHTMLLocation.innerHTML = content
 };
+
 function renderDinos() {
   let content = ''
   for (let i = 0; i < pets.length; i++) {
@@ -337,3 +348,4 @@ function renderDinos() {
   }
   renderHTMLLocation.innerHTML = content
 };
+//

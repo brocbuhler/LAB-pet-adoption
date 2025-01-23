@@ -37,7 +37,7 @@
   background-image: linear-gradient(purple, hotpink);
   text-shadow: 0px 0px 3px black;
 }
-#submit-el {
+.submit {
   display: block;
   margin: auto;
   width: 150px;
@@ -47,8 +47,9 @@
   font-weight: bolder;
   border-radius: 50px;
   text-align: center;
+  height: 50px;
 }
-#submit-el:hover {
+.submit:hover {
   background-image: linear-gradient(purple, hotpink);
   text-shadow: 0px 0px 3px black;
 }
