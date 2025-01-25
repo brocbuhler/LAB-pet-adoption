@@ -252,8 +252,8 @@ let dogsBtn = document.querySelector("#dogs-el");
 let catsBtn = document.querySelector("#cats-el");
 let dinosBtn = document.querySelector("#dinos-el");
 let renderHTMLLocation = document.querySelector("#animals");
-let form = document.querySelector('form')
-let deleteBtn = document.querySelector(".delete") //need html button with css styling
+let form = document.querySelector('form');
+let deleteBtn = document.querySelector(".delete");
 //
 
 // Event listeners
@@ -284,16 +284,14 @@ form.reset();
 function renderPets() {
   let content = ''
  for (let i = 0; i < pets.length; i++) {
-  content += `<div class="card" style="width: 18rem;">
-  <img src="${pets[i].imageUrl}" class="card-img-top" alt="someones pet">
+  content += `<img src="${pets[i].imageUrl}" class="card-img-top" alt="someones pet">
   <div class="card-body">
     <h5 class="card-title">${pets[i].name}</h5>
     <p class="card-text">color: ${pets[i].color}, 
     Special Skill: ${pets[i].specialSkill}</p>
     <a href="#" class="btn btn-primary">${pets[i].type}</a>
     <button class="delete">X</button>
-  </div>
-</div>`
+  </div>`
  }
  renderHTMLLocation.innerHTML = content
 };
@@ -302,16 +300,14 @@ function renderCats() {
   let content = ''
   for (let i = 0; i < pets.length; i++) {
     if (pets[i].type === "cat") {
-   content += `<div class="card" style="width: 18rem;">
-   <img src="${pets[i].imageUrl}" class="card-img-top" alt="someones pet">
+   content += `<img src="${pets[i].imageUrl}" class="card-img-top" alt="someones pet">
    <div class="card-body">
      <h5 class="card-title">${pets[i].name}</h5>
      <p class="card-text">color: ${pets[i].color}, 
      Special Skill: ${pets[i].specialSkill}</p>
      <a href="#" class="btn btn-primary">${pets[i].type}</a>
      <button class="delete">X</button>
-   </div>
- </div>`
+   </div>`
   }
 }
   renderHTMLLocation.innerHTML = content
@@ -321,16 +317,14 @@ function renderDogs() {
   let content = ''
   for (let i = 0; i < pets.length; i++) {
     if (pets[i].type === "dog") {
-   content += `<div class="card" style="width: 18rem;">
-   <img src="${pets[i].imageUrl}" class="card-img-top" alt="someones pet">
+   content += `<img src="${pets[i].imageUrl}" class="card-img-top" alt="someones pet">
    <div class="card-body">
      <h5 class="card-title">${pets[i].name}</h5>
      <p class="card-text">color: ${pets[i].color}, 
      Special Skill: ${pets[i].specialSkill}</p>
      <a href="#" class="btn btn-primary">${pets[i].type}</a>
      <button class="delete">X</button>
-   </div>
- </div>`
+   </div>`
     }
   }
   renderHTMLLocation.innerHTML = content
@@ -340,16 +334,14 @@ function renderDinos() {
   let content = ''
   for (let i = 0; i < pets.length; i++) {
     if (pets[i].type === "dino") {
-   content += `<div class="card" style="width: 18rem;">
-   <img src="${pets[i].imageUrl}" class="card-img-top" alt="someones pet">
+   content += `<img src="${pets[i].imageUrl}" class="card-img-top" alt="someones pet">
    <div class="card-body">
      <h5 class="card-title">${pets[i].name}</h5>
      <p class="card-text">color: ${pets[i].color}, 
      Special Skill: ${pets[i].specialSkill}</p>
      <a href="#" class="btn btn-primary">${pets[i].type}</a>
      <button class="delete">X</button>
-   </div>
- </div>`
+   </div>`
     }
   }
   renderHTMLLocation.innerHTML = content
@@ -359,5 +351,5 @@ function renderDinos() {
 //need a new function that will delete and then update the dom with the deleted info
 function deletePet() {
   //funky splice stuff and review of js event listners 
-  console.log("button works!!!")
-}
+  console.log("button works!!!");
+};
