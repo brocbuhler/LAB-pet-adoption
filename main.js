@@ -252,8 +252,9 @@ let dogsBtn = document.querySelector("#dogs-el");
 let catsBtn = document.querySelector("#cats-el");
 let dinosBtn = document.querySelector("#dinos-el");
 let renderHTMLLocation = document.querySelector("#animals");
-let form = document.querySelector('form')
-let deleteBtn = document.querySelector(".delete") //need html button with css styling
+let form = document.querySelector('form');
+let deleteBtn = document.querySelector(".delete");
+let testBtn = document.querySelector(".btn btn-primary");
 //
 
 // Event listeners
@@ -262,7 +263,8 @@ dogsBtn.addEventListener("click", renderDogs);
 catsBtn.addEventListener("click", renderCats);
 dinosBtn.addEventListener("click", renderDinos);
 form.addEventListener("submit", renderNewPets);
-deleteBtn.addEventListener("click", deletePet);
+deleteBtn.addEventListener("click", console.log("please work"));
+testBtn.addEventListener("click", console.log("does this work"));
 // 
 
 // Functions
@@ -359,5 +361,5 @@ renderHTMLLocation.innerHTML = content
 //need a new function that will delete and then update the dom with the deleted info
 function deletePet() {
 //funky splice stuff and review of js event listners 
-console.log("button works!!!")
+console.log("please work")
 }
