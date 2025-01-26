@@ -2,6 +2,13 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  column-gap: 10px;
+  row-gap: 10px;
+  background-color: #E5D9F2;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 3px solid #A594F9;
+  border-radius: 10px;
 }
 .btn-el {
   display: flex;
@@ -53,15 +60,49 @@
   background-image: linear-gradient(purple, hotpink);
   text-shadow: 0px 0px 3px black;
 }
-.delete {
-  width: 35px;
-  height: 35px;
-  font-weight: 900;
-  background-color: red;
-  border: 1px solid black;
-  text-align: center;
+.animal-card-el {
+  width: 300px;
+  height: 460px;
+  background-color: #7371FC;
   border-radius: 5px;
+  border: 3px solid #CDC1FF;
 }
-.delete:hover {
-background-image: linear-gradient(hotpink, red);
+.image-el {
+  width: 200px;
+  height: 200px;
+  border-radius: 50px;
+  display: block;
+  margin: auto;
+  border: 5px solid #A594F9;
+}
+h1 {
+  text-align: center;
+  color: #E5D9F2;
+}
+h3 {
+  display: block;
+  color: #E5D9F2;
+  background-color: #F5EFFF;
+  border-radius: 50px;
+  width: 125px;
+  margin: auto;
+  text-align: center;
+  text-shadow: 0px 0px 2px #7371FC;
+}
+p {
+  padding-left: 25px;
+  padding-right: 25px;
+  color: #E5D9F2;
+}
+.delete-el {
+  margin: 1px 0px 0px 268px;
+  border-color: #7371FC;
+  color: #7371FC;
+  background-color: #F5EFFF;
+  font-weight: bolder;
+}
+.delete-el:hover {
+  color: black;
+  background-color: red;
+  border: none;
 }
