@@ -264,7 +264,7 @@ const allAnimalCards = (a) => {
   let cardContent = "";
   for (let i = 0; i < pets.length; i++) {
     cardContent += `<div class="animal-card-el">
-    <button class="delete-el">X</button>
+    <button id="${pets[i].id}" class="delete-el">X</button>
     <h1 class="name-el">${pets[i].name}</h1>
     <img class="image-el" src="${pets[i].imageUrl}">
     <p class="color-el">${pets[i].color}</p>
@@ -280,7 +280,7 @@ const animalCards = (a) => {
   for (let i = 0; i < pets.length; i++) {
     if (pets[i].type === a) {
     cardContent += `<div class="animal-card-el">
-    <button class="delete-el">X</button>
+    <button id="${pets[i].id}" class="delete-el">X</button>
     <h1 class="name-el">${pets[i].name}</h1>
     <img class="image-el" src="${pets[i].imageUrl}">
     <p class="color-el">${pets[i].color}</p>
@@ -309,6 +309,7 @@ form.reset();
 //
 
 //event listners
+
 const viewAll = document.querySelector("#all-el")
 viewAll.addEventListener("click", () => allAnimalCards(true))
 const dogsAll = document.querySelector("#dogs-el")
@@ -317,8 +318,9 @@ const catsAll = document.querySelector("#cats-el")
 catsAll.addEventListener("click", () => animalCards("cat"))
 const dinosAll = document.querySelector("#dinos-el")
 dinosAll.addEventListener("click", () => animalCards("dino"))
-let form = document.querySelector('form');
-form.addEventListener("submit", () => renderNewPets());
+const form = document.querySelector('form');
+form.addEventListener("submit", renderNewPets);
+
 
 //
 //functions
