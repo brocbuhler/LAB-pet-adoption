@@ -241,20 +241,6 @@ let pets = [
   }
 ];
 
-//base content setup
-//   const content = 
-  // `<div class="animal-card-el">
-  // <button class="delete-el">X</button>
-  // <h1 class="name-el">Sample</h1>
-  // <img class="image-el" src="dog 1.avif">
-  // <p class="color-el">Sample</p>
-  // <p class="specialSkill-el">Sample</p>
-  // <h3 class="type-el">Sample</h3>
-  // </div>`
-// const baseAnimals = document.querySelector("#animals")
-// baseAnimals.innerHTML = content
-//
-//render
 const render = (IdEl, renderItem) => {
   const animalLocation = document.querySelector(IdEl);
   animalLocation.innerHTML = renderItem;
@@ -264,7 +250,7 @@ const allAnimalCards = (a) => {
   let cardContent = "";
   for (let i = 0; i < pets.length; i++) {
     cardContent += `<div class="animal-card-el">
-    <button id="${pets[i].id}" class="delete-el">X</button>
+    <button id="delete--${pets[i].id}" class="delete-el">X</button>
     <h1 class="name-el">${pets[i].name}</h1>
     <img class="image-el" src="${pets[i].imageUrl}">
     <p class="color-el">${pets[i].color}</p>
@@ -280,7 +266,7 @@ const animalCards = (a) => {
   for (let i = 0; i < pets.length; i++) {
     if (pets[i].type === a) {
     cardContent += `<div class="animal-card-el">
-    <button id="${pets[i].id}" class="delete-el">X</button>
+    <button id="delete--${pets[i].id}" class="delete-el">X</button>
     <h1 class="name-el">${pets[i].name}</h1>
     <img class="image-el" src="${pets[i].imageUrl}">
     <p class="color-el">${pets[i].color}</p>
@@ -309,7 +295,6 @@ form.reset();
 //
 
 //event listners
-
 const viewAll = document.querySelector("#all-el")
 viewAll.addEventListener("click", () => allAnimalCards(true))
 const dogsAll = document.querySelector("#dogs-el")
@@ -318,11 +303,21 @@ const catsAll = document.querySelector("#cats-el")
 catsAll.addEventListener("click", () => animalCards("cat"))
 const dinosAll = document.querySelector("#dinos-el")
 dinosAll.addEventListener("click", () => animalCards("dino"))
-const form = document.querySelector('form');
+let form = document.querySelector("form");
 form.addEventListener("submit", renderNewPets);
-
-
 //
+
 //functions
 allAnimalCards()
 //
+
+//step 5 delete function
+const animals = document.querySelector("#animals");
+animals.addEventListener('click', (e) => {
+  if (e.target.id.includes("delete")) {
+    const [, id] = e.target.id.split("--");
+    const index = pets.findIndex(e => e.id === Number(id)); 
+    pets.splice(index, 1);
+    allAnimalCards()
+  }
+});
